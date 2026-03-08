@@ -1,0 +1,6 @@
+2026-03-08T17:40:55.180Z [INFO] Server started on port 3000
+2026-03-08T17:42:51.487Z [INFO] Server started on port 3000
+2026-03-08T17:50:00.221Z [INFO] Request received: /simulate-error
+2026-03-08T17:50:00.225Z [ERROR] File not found: D:\files (2)\public\simulate-error
+2026-03-08T17:50:00.340Z [INFO] Request received: /favicon.ico
+2026-03-08T17:50:00.341Z [ERROR] File not found: D:\files (2)\public\favicon.ico

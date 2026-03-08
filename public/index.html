@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DevOps Quiz — Test Your Skills</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Bebas+Neue&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ░░ SCREEN 1 — WELCOME ░░ -->
+  <section id="screen-welcome" class="screen active">
+    <div class="bg-grid"></div>
+    <div class="welcome-content">
+      <div class="badge">DEVOPS PREP</div>
+      <h1 class="big-title">TEST YOUR<br><span>DEVOPS</span><br>SKILLS</h1>
+      <p class="sub">20 essential questions · Multiple choice · Instant results</p>
+      <div class="topics">
+        <span>Docker</span><span>Kubernetes</span><span>CI/CD</span>
+        <span>Linux</span><span>Git</span><span>Networking</span>
+      </div>
+      <div class="name-row">
+        <input id="userName" type="text" placeholder="Enter your name to begin..." maxlength="30" autocomplete="off"/>
+        <button id="startBtn" onclick="startQuiz()">START →</button>
+      </div>
+      <p class="name-error" id="nameError"></p>
+    </div>
+  </section>
+
+  <!-- ░░ SCREEN 2 — QUIZ ░░ -->
+  <section id="screen-quiz" class="screen">
+    <div class="quiz-topbar">
+      <div class="quiz-logo">DevOps<span>Quiz</span></div>
+      <div class="quiz-meta">
+        <div class="progress-wrap">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="q-counter" id="qCounter">Q 1 / 20</div>
+      </div>
+      <div class="timer-wrap" id="timerWrap">
+        <span class="timer-icon">⏱</span>
+        <span id="timerDisplay">30</span>s
+      </div>
+    </div>
+
+    <div class="quiz-body">
+      <div class="question-card" id="questionCard">
+        <div class="q-number" id="qNumber">01</div>
+        <div class="q-category" id="qCategory">Docker</div>
+        <div class="q-text" id="qText">Question text goes here</div>
+        <div class="options-grid" id="optionsGrid"></div>
+        <button class="next-btn" id="nextBtn" onclick="nextQuestion()" disabled>
+          NEXT QUESTION →
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ SCREEN 3 — RESULT ░░ -->
+  <section id="screen-result" class="screen">
+    <div class="bg-grid"></div>
+    <div class="result-content">
+      <div class="result-header">
+        <div class="result-name" id="resultName">Hey, Hero!</div>
+        <div class="score-ring">
+          <svg viewBox="0 0 120 120" class="ring-svg">
+            <circle cx="60" cy="60" r="50" class="ring-bg"/>
+            <circle cx="60" cy="60" r="50" class="ring-fill" id="ringFill"/>
+          </svg>
+          <div class="score-center">
+            <div class="score-num" id="scoreNum">0</div>
+            <div class="score-label">/ 20</div>
+          </div>
+        </div>
+        <div class="grade-badge" id="gradeBadge">BEGINNER</div>
+        <p class="grade-msg" id="gradeMsg">Keep practicing!</p>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-box correct">
+          <div class="stat-num" id="statCorrect">0</div>
+          <div class="stat-lbl">Correct</div>
+        </div>
+        <div class="stat-box wrong">
+          <div class="stat-num" id="statWrong">0</div>
+          <div class="stat-lbl">Wrong</div>
+        </div>
+        <div class="stat-box skipped">
+          <div class="stat-num" id="statSkipped">0</div>
+          <div class="stat-lbl">Skipped</div>
+        </div>
+        <div class="stat-box percent">
+          <div class="stat-num" id="statPercent">0%</div>
+          <div class="stat-lbl">Score</div>
+        </div>
+      </div>
+
+      <div class="review-section">
+        <div class="review-title">QUESTION REVIEW</div>
+        <div id="reviewList"></div>
+      </div>
+
+      <button class="restart-btn" onclick="restartQuiz()">↺ TRY AGAIN</button>
+    </div>
+  </section>
+
+  <script src="quiz.js"></script>
+</body>
+</html>

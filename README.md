@@ -1,11 +1,12 @@
-
-# AI-Powered Recovery Log Tracking System
+# Self-Healing Log Monitoring System on AWS
 
 ## Overview
 
-This project demonstrates a **self-healing DevOps monitoring system** that detects application errors from logs, performs automated recovery, and stores logs in the cloud.
+This project demonstrates a **DevOps-style automated log monitoring and recovery system** built on AWS.
 
-The system simulates a real-world DevOps monitoring pipeline where application logs are analyzed to detect failures and trigger recovery actions automatically.
+The system monitors application logs, detects critical errors, and automatically performs recovery actions to restore the service.
+
+It simulates a real-world DevOps monitoring workflow used in production systems.
 
 ---
 
@@ -19,7 +20,7 @@ Application Logs Generated
 ↓
 Logs Uploaded to Amazon S3
 ↓
-Python Analyzer Reads Logs
+Python Log Analyzer
 ↓
 Error Detection
 ↓
@@ -35,7 +36,7 @@ Automatic Recovery (PM2 restart)
 * AWS S3
 * PM2 Process Manager
 * AWS CLI
-* SQLite (for incident tracking)
+* SQLite (optional incident storage)
 
 ---
 
@@ -64,13 +65,12 @@ AI-powered-recovery-log-tracking
 
 ## Features
 
-* Node.js application deployed on AWS EC2
-* Log generation and storage
-* Log upload to Amazon S3
-* Python-based log analyzer
-* Error detection from logs
-* Automated service recovery using PM2
-* Basic incident logging
+• Node.js application deployed on AWS EC2
+• Log generation and storage
+• Log upload to Amazon S3
+• Python-based log analyzer for error detection
+• Automated service recovery using PM2
+• Basic incident detection workflow
 
 ---
 
@@ -80,19 +80,19 @@ AI-powered-recovery-log-tracking
 2. Application logs are written to `logs/app.log`.
 3. Logs are uploaded to an S3 bucket.
 4. The analyzer service reads the logs from S3.
-5. If a critical error is detected, the service automatically restarts the application using PM2.
+5. If a critical error is detected, the system automatically restarts the application using PM2.
 
 ---
 
 ## Running the Application
 
-Start the Node.js application:
+Start the application using PM2:
 
 ```
 pm2 start server.js --name quiz-app
 ```
 
-Generate a test error:
+Trigger a test error:
 
 ```
 http://EC2_PUBLIC_IP:3000/simulate-error
@@ -116,15 +116,18 @@ Restarting quiz-app
 
 ---
 
-## Future Improvements
+## Learning Outcomes
 
-* AI-based Root Cause Analysis (RCA)
-* Incident dashboard for monitoring
-* Event-driven triggers using AWS S3 notifications
-* Integration with monitoring tools
+This project demonstrates practical DevOps concepts including:
+
+• Cloud deployment using AWS
+• Log monitoring
+• Automation and recovery mechanisms
+• Service management using PM2
 
 ---
 
 ## Author
 
-Yash Kangude
+Yash
+Aspiring DevOps Engineer

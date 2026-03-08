@@ -127,5 +127,4 @@ Restarting quiz-app
 
 ## Author
 
-Yash
-Aspiring DevOps Engineer
+Yash Kangude

@@ -129,5 +129,5 @@ This project demonstrates practical DevOps concepts including:
 
 ## Author
 
-Yash
-Aspiring DevOps Engineer
+Yash Kangude
+
